@@ -9,5 +9,5 @@ import { MatButtonModule } from '@angular/material/button';
   styleUrl: './login-form.component.scss',
 })
 export class LoginFormComponent {
-  @Output() public subscribeClicked = new EventEmitter<void>() 
+  @Output() public subscribeClicked = new EventEmitter<void>();
 }
