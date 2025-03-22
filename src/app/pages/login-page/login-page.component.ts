@@ -23,4 +23,8 @@ export class LoginPageComponent {
     this.userService.addUserToList(user);
     this.isLogin = !this.isLogin;
   }
+
+  public logUser(email: string, password: string) {
+    console.log("==>", email, password);
+  }
 }
