@@ -20,6 +20,7 @@ export class LoginPageComponent {
   }
 
   public createUser(user: User): void {
-    console.log('USER : ', user);
+    this.userService.addUserToList(user);
+    this.isLogin = !this.isLogin;
   }
 }
