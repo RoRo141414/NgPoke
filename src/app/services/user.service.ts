@@ -1,5 +1,6 @@
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { User } from '../models/user.interface';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root',
@@ -8,8 +9,9 @@ export class UserService {
   private readonly USER_KEY = 'USER';
 
   private _users: User[] = [];
-
   private _userLogged: User | undefined;
+
+  private readonly router = inject(Router);
 
   constructor() {
     const existingUsers = localStorage.getItem(this.USER_KEY);
@@ -43,5 +45,18 @@ export class UserService {
 
   public setUserLogged(user: User | undefined): void {
     this._userLogged = user;
+  }
+
+  public getUserConnectedFullName(): string | undefined {
+    if (this._userLogged) {
+      return `${this._userLogged.firstname} ${this._userLogged.name}`;
+    } else {
+      return undefined;
+    }
+  }
+
+  public logout(): void {
+    this.setUserLogged(undefined);
+    this.router.navigateByUrl('login');
   }
 }

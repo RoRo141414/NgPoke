@@ -1,5 +1,16 @@
+@if(userService.getUserConnectedFullName()) {
 <mat-toolbar>
   <span>Ng Poké</span>
+  <span class="link" routerLink="/pokemon-list" routerLinkActive="router-link-active">Pokémon list</span>
+  <span class="link" routerLink="/my-pokemons" routerLinkActive="router-link-active">Mes pokémons</span>
+
+  <span class="spacer"></span>
+  <span>Bienvenue {{userService.getUserConnectedFullName()}}</span>
+  <button mat-icon-button (click)="userService.logout()" aria-label="Example icon-button with share icon">
+    <mat-icon>logout</mat-icon>
+  </button>
 </mat-toolbar>
+}
+
 
 <router-outlet></router-outlet>
