@@ -9,6 +9,8 @@ export class UserService {
 
   private _users: User[] = [];
 
+  private _userLogged: User | undefined;
+
   constructor() {
     const existingUsers = localStorage.getItem(this.USER_KEY);
     if (existingUsers) {
@@ -26,12 +28,20 @@ export class UserService {
   }
 
   public checkUserPassword(userEmail: string, password: string): boolean {
-    const user = this._users.find((user) => user.email === userEmail);
+    const user = this.getUserByEmail(userEmail);
 
     if (user) {
       return user.password === password;
     } else {
       return false;
     }
+  }
+
+  public getUserByEmail(email: string): User | undefined {
+    return this._users.find((user) => user.email === email);
+  }
+
+  public setUserLogged(user: User | undefined): void {
+    this._userLogged = user;
   }
 }

@@ -25,6 +25,16 @@ export class LoginPageComponent {
   }
 
   public logUser(email: string, password: string) {
-    console.log("==>", email, password);
+    const passwordIsValid = this.userService.checkUserPassword(email, password);
+
+    if (passwordIsValid) {
+      const user = this.userService.getUserByEmail(email);
+      if (user) {
+        this.userService.setUserLogged(user);
+        console.log('Utilisateur connecté');
+      }
+    } else {
+      alert('Mot de passe incorrect');
+    }
   }
 }
