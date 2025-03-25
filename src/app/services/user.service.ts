@@ -59,4 +59,8 @@ export class UserService {
     this.setUserLogged(undefined);
     this.router.navigateByUrl('login');
   }
+
+  public isUserLoggedIn(): boolean {
+    return !!this._userLogged;
+  }
 }
