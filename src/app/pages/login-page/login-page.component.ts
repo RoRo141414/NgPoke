@@ -3,6 +3,7 @@ import { LoginFormComponent } from '../../components/login-form/login-form.compo
 import { SubscribeFormComponent } from '../../components/subscribe-form/subscribe-form.component';
 import { UserService } from '../../services/user.service';
 import { User } from '../../models/user.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -14,6 +15,7 @@ export class LoginPageComponent {
   public isLogin = true;
 
   public userService = inject(UserService);
+  public router = inject(Router);
 
   constructor() {
     console.log(this.userService.getList());
@@ -31,6 +33,7 @@ export class LoginPageComponent {
       const user = this.userService.getUserByEmail(email);
       if (user) {
         this.userService.setUserLogged(user);
+        this.router.navigateByUrl('/pokemon-list')
         console.log('Utilisateur connecté');
       }
     } else {
