@@ -63,4 +63,20 @@ export class UserService {
   public isUserLoggedIn(): boolean {
     return !!this._userLogged;
   }
+
+  public getUserLogged() {
+    return this._userLogged;
+  }
+
+  public updateUser(user: User) {
+    const userDB = this._users.find((userDb) => userDb.email === user.email);
+    if (userDB) {
+      userDB.password = user.password;
+      userDB.name = user.name;
+      userDB.firstname = user.firstname;
+      userDB.pseudo = user.pseudo;
+    }
+    this.setUserLogged(userDB);
+    localStorage.setItem(this.USER_KEY, JSON.stringify(this._users));
+  }
 }
