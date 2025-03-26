@@ -2,10 +2,8 @@ import {
   Component,
   EventEmitter,
   Input,
-  OnChanges,
   OnInit,
-  Output,
-  SimpleChanges,
+  Output
 } from '@angular/core';
 import {
   FormControl,
