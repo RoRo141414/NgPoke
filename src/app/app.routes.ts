@@ -4,6 +4,7 @@ import { MyPokemonsComponent } from './pages/my-pokemons/my-pokemons.component';
 import { PokemonListComponent } from './pages/pokemon-list/pokemon-list.component';
 import { authGuard } from './guards/auth.guard';
 import { MyAccountComponent } from './pages/my-account/my-account.component';
+import { PokemonDetailsComponent } from './pages/pokemon-details/pokemon-details.component';
 
 export const routes: Routes = [
   {
@@ -14,6 +15,11 @@ export const routes: Routes = [
   {
     path: 'pokemon-list',
     component: PokemonListComponent,
+    canActivate: [authGuard],
+  },
+  {
+    path: 'pokemon-details/:id',
+    component: PokemonDetailsComponent,
     canActivate: [authGuard],
   },
   {

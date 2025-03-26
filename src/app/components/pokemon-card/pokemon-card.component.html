@@ -8,6 +8,6 @@
         <img [src]="imageUrl" />
     </mat-card-content>
     <mat-card-actions>
-        <button mat-button>Détails</button>
+        <button mat-button [routerLink]="'/pokemon-details/' + id">Détails</button>
     </mat-card-actions>
 </mat-card>
