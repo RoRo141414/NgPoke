@@ -1,7 +1,99 @@
 @if(pokemonId) {
 <div class="container">
     @if(pokemonDetails$|async; as pokemonDetails) {
-        <p>Hello Pokemon : {{pokemonDetails.name}}</p>
+    <mat-card>
+        <mat-card-header>
+            <img mat-card-avatar [src]="pokemonDetails.sprites.front_default">
+            <mat-card-title>{{pokemonDetails.name}}</mat-card-title>
+            <mat-card-subtitle>#{{pokemonDetails.id.toString().padStart(4, "0")}}</mat-card-subtitle>
+        </mat-card-header>
+        <img mat-card-image class="center-card-image"
+            [src]="pokemonDetails.sprites.other['official-artwork'].front_default" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+            <mat-accordion multi>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>info</mat-icon>
+                            Basic info
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="info-container">
+                        <div>
+                            <h2>Height</h2>
+                            <p>{{pokemonDetails.height / 10}} m</p>
+                        </div>
+                        <div>
+                            <h2>Weight</h2>
+                            <p>{{pokemonDetails.weight / 10}} kg</p>
+                        </div>
+                        <div>
+                            <h2>Base XP</h2>
+                            <p>{{pokemonDetails.base_experience}} xp</p>
+                        </div>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>local_fire_department</mat-icon>
+                            Types
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <div class="types-container">
+                        <mat-chip-set>
+                            @for (item of pokemonDetails.types; track $index) {
+                            <mat-chip>{{item.type.name}}</mat-chip>
+                            }
+                        </mat-chip-set>
+                    </div>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>analytics</mat-icon>
+                            Stats
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list role="list">
+                        @for (item of pokemonDetails.stats; track $index) {
+                        <mat-list-item role="listitem">{{item.stat.name}}</mat-list-item>
+                        <mat-progress-bar mode="determinate" [value]="item.base_stat"></mat-progress-bar>
+                        }
+
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>check_circle</mat-icon>
+                            Abilities
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <mat-list role="list">
+                        @for (item of pokemonDetails.abilities; track $index) {
+                        <mat-list-item role="listitem">{{item.ability.name}}</mat-list-item>
+                        }
+                    </mat-list>
+                </mat-expansion-panel>
+                <mat-expansion-panel>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>image</mat-icon>
+                            Sprites
+                        </mat-panel-title>
+                    </mat-expansion-panel-header>
+                    <img mat-card-avatar [src]="pokemonDetails.sprites.front_default">
+                    <img mat-card-avatar [src]="pokemonDetails.sprites.back_default">
+                </mat-expansion-panel>
+            </mat-accordion>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button (click)="goBack()">
+                <mat-icon>arrow_back</mat-icon>Retour
+            </button>
+        </mat-card-actions>
+    </mat-card>
     }
 </div>
 }
