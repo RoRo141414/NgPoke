@@ -1,13 +1,25 @@
+<<<<<<< Updated upstream
 @if(userService.getUserConnectedFullName()) {
 <mat-toolbar>
   <span>Ng Poké</span>
+=======
+<mat-toolbar color="primary" role="navigation" aria-label="Barre de navigation principale" >
+  <span class="title">Ng Poké</span>
+
+>>>>>>> Stashed changes
   <span class="link" routerLink="/pokemon-list" routerLinkActive="router-link-active">Pokémon list</span>
   <span class="link" routerLink="/my-pokemons" routerLinkActive="router-link-active">Mes pokémons</span>
   <span class="link" routerLink="/my-account" routerLinkActive="router-link-active">Mon compte</span>
 
   <span class="spacer"></span>
+<<<<<<< Updated upstream
   <span>Bienvenue {{userService.getUserConnectedFullName()}}</span>
   <button mat-icon-button (click)="userService.logout()" aria-label="Example icon-button with share icon">
+=======
+
+  <span class="welcome">Bienvenue {{ userService.getUserConnectedFullName() }}</span>
+  <button mat-icon-button (click)="userService.logout()" aria-label="Déconnexion">
+>>>>>>> Stashed changes
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>

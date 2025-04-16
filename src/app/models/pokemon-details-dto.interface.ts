@@ -1,4 +1,5 @@
 export interface PokemonDetailsDto {
+<<<<<<< Updated upstream
   id: string;
   name: string;
   types: PokemonType[];
@@ -38,5 +39,21 @@ export interface Sprites {
     'official-artwork': {
       front_default: string;
     };
+=======
+  id: number;
+  name: string;
+  image: string;
+  types: string[];
+  height: number;
+  weight: number;
+  abilities: string[];
+  stats: {
+    hp: number;
+    attack: number;
+    defense: number;
+    specialAttack: number;
+    specialDefense: number;
+    speed: number;
+>>>>>>> Stashed changes
   };
 }

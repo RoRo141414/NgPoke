@@ -1,59 +1,110 @@
 # NgPoke
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.3.
+**NgPoke** est une application Angular conçue pour afficher et interagir avec des données issues de l’univers Pokémon. Elle permet d'explorer des fiches Pokémon de manière dynamique grâce à l'utilisation de l'API PokéAPI, offrant une interface fluide et moderne basée sur Angular.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🧰 Technologies utilisées
+
+- **Angular 15+**
+- **TypeScript**
+- **SCSS**
+- **RxJS**
+- **PokéAPI** – API publique utilisée pour récupérer les données des Pokémon
+
+---
+
+## 🚀 Fonctionnalités principales
+
+- Recherche de Pokémon via une barre de recherche.
+- Affichage des fiches détaillées (type, taille, poids, image, etc.).
+- Navigation responsive et interactive.
+- Composants Angular modulaires pour une meilleure maintenabilité.
+- Chargement asynchrone des données via des Observables.
+
+---
+
+## 📦 Prérequis
+
+Avant de commencer, assurez-vous d’avoir installé les outils suivants :
+
+- [Node.js](https://nodejs.org/) (version 16 ou plus recommandée)
+- [Angular CLI](https://angular.io/cli)
+
+---
+
+## ⚙️ Installation
+
+Clonez le dépôt puis installez les dépendances :
+
+```bash
+git clone <repository-url>
+cd NgPoke-dev
+npm install
+```
+
+---
+
+## ▶️ Lancer le serveur de développement
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Rendez-vous ensuite sur [http://localhost:4200](http://localhost:4200). L’application se rechargera automatiquement en cas de modifications.
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🏗️ Génération de composants
 
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Pour générer un nouveau composant :
 
 ```bash
-ng generate --help
+ng generate component nom-du-composant
 ```
 
-## Building
+---
 
-To build the project run:
+## 🛠️ Build du projet
+
+Pour compiler l’application pour la production :
 
 ```bash
 ng build
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Le projet sera compilé dans le dossier `dist/`.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## ✅ Tests unitaires
+
+Lancer les tests avec Karma :
 
 ```bash
 ng test
 ```
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 🔍 Tests end-to-end
+
+Angular CLI ne fournit plus de framework e2e par défaut. Vous pouvez ajouter Cypress ou Playwright si besoin :
 
 ```bash
-ng e2e
+ng add @cypress/schematic
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+---
 
-## Additional Resources
+## 📚 Ressources supplémentaires
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- [Documentation Angular](https://angular.io/docs)
+- [Angular CLI Reference](https://angular.dev/tools/cli)
+- [PokéAPI](https://pokeapi.co/)
+
+---
+
+## 👨‍💻 Auteur
+
+Projet de démonstration réalisé dans un cadre pédagogique.

@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 .container {
   width: 80vw;
   margin: auto;
@@ -31,4 +32,42 @@
       }
     }
   }
+=======
+
+.pokemon-detail-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  font-family: Arial, sans-serif;
+}
+
+.pokemon-name {
+  text-align: center;
+  color: #2c3e50;
+}
+
+.pokemon-image {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.pokemon-image img {
+  max-width: 200px;
+}
+
+h2 {
+  color: #2980b9;
+  margin-top: 1rem;
+}
+
+ul {
+  padding-left: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+>>>>>>> Stashed changes
 }

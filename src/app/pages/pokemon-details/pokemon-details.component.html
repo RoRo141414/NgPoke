@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 @if(pokemonId) {
 <div class="container">
     @if(pokemonDetails$|async; as pokemonDetails) {
@@ -97,3 +98,44 @@
     }
 </div>
 }
+=======
+
+<div *ngIf="pokemonDetails$ | async as pokemon" class="pokemon-detail-container">
+  <h1 class="pokemon-name">{{ pokemon.name | titlecase }} (n°{{ pokemon.id }})</h1>
+
+  <div class="pokemon-image">
+    <img [src]="pokemon.image" [alt]="pokemon.name" />
+  </div>
+
+  <div class="pokemon-types">
+    <h2>Types</h2>
+    <ul>
+      <li *ngFor="let type of pokemon.types">{{ type }}</li>
+    </ul>
+  </div>
+
+  <div class="pokemon-info">
+    <p><strong>Taille:</strong> {{ pokemon.height }} dm</p>
+    <p><strong>Poids:</strong> {{ pokemon.weight }} hg</p>
+  </div>
+
+  <div class="pokemon-abilities">
+    <h2>Capacités</h2>
+    <ul>
+      <li *ngFor="let ability of pokemon.abilities">{{ ability }}</li>
+    </ul>
+  </div>
+
+  <div class="pokemon-stats">
+    <h2>Statistiques</h2>
+    <ul>
+      <li><strong>PV:</strong> {{ pokemon.stats.hp }}</li>
+      <li><strong>Attaque:</strong> {{ pokemon.stats.attack }}</li>
+      <li><strong>Défense:</strong> {{ pokemon.stats.defense }}</li>
+      <li><strong>Attaque Spéciale:</strong> {{ pokemon.stats.specialAttack }}</li>
+      <li><strong>Défense Spéciale:</strong> {{ pokemon.stats.specialDefense }}</li>
+      <li><strong>Vitesse:</strong> {{ pokemon.stats.speed }}</li>
+    </ul>
+  </div>
+</div>
+>>>>>>> Stashed changes
